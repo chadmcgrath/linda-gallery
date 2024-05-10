@@ -4,8 +4,6 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 import Button from '@mui/material/Button';
 import Fade from '@mui/material/Fade';
 import Gallery from '../Gallery/Gallery';
@@ -17,9 +15,7 @@ const Home: React.FC = () => {
         <div style={{ display: 'flex', flexDirection: 'column' }}>
             <AppBar position="sticky" color="inherit" sx={{ backgroundColor: '#2B2C2C' }}>
                 <Toolbar>
-                    <IconButton edge="start" color="inherit" aria-label="menu">
-                        <MenuIcon />
-                    </IconButton>
+                    
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
 
                     </Typography>
