@@ -23,7 +23,8 @@ const StyledLink = styled(Link)({
 const Home: React.FC = () => {
     const appBarHeight = 64;
     const minPageHeight = `calc(100vh - ${appBarHeight}px)`;
-
+    // todo!!!!
+    const ownerName = "Chad";
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', scrollbarGutter: 'always' }}>
             <AppBar position="sticky" color="inherit" sx={{ backgroundColor: '#2B2C2C' }}>
@@ -69,7 +70,7 @@ const Home: React.FC = () => {
                         //fontWeight: 'bold', 
                         textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
                     }}>
-                        Linda Bullock
+                        {ownerName}
                     </Box>
 
                 </Box></Fade>
