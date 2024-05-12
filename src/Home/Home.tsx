@@ -8,26 +8,39 @@ import Button from '@mui/material/Button';
 import Fade from '@mui/material/Fade';
 import Gallery from '../Gallery/Gallery';
 import { Link } from 'react-scroll';
-;
+import Writing from '../Writing/Writing';
+import { styled } from '@mui/system';
+
+
+const StyledLink = styled(Link)({
+    color: 'inherit',
+    textDecoration: 'none',
+    '&:hover': {
+        textDecoration: 'underline',
+    },
+});
 
 const Home: React.FC = () => {
+    const appBarHeight = 64;
+    const minPageHeight = `calc(100vh - ${appBarHeight}px)`;
+
     return (
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', scrollbarGutter: 'always' }}>
             <AppBar position="sticky" color="inherit" sx={{ backgroundColor: '#2B2C2C' }}>
                 <Toolbar>
-                    
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
 
-                    </Typography>
-                    <Link to="home" smooth={true} duration={500} style={{ color: 'inherit' }}>
+
+                    <StyledLink to="home" smooth={true} duration={500} style={{ color: 'inherit' }}>
 
                         <Button color="inherit" sx={{ border: 'none', fontSize: '1.2em', '&:hover, &:focus': { textDecoration: 'underline solid 2px', outline: 'none' } }}>Home</Button>
-                    </Link>
-                    <Link to="gallery" smooth={true} duration={500} style={{ color: 'inherit' }}>
+                    </StyledLink>
+                    <StyledLink to="gallery" offset={-1 * appBarHeight} smooth={true} duration={500} style={{ color: 'inherit' }}>
 
                         <Button color="inherit" sx={{ border: 'none', fontSize: '1.2em', '&:hover, &:focus': { textDecoration: 'underline solid 2px', outline: 'none' } }}>Gallery</Button>
-                    </Link>
-                    <Button color="inherit" sx={{ border: 'none', fontSize: '1.2em', '&:hover, &:focus': { textDecoration: 'underline solid 2px', outline: 'none' } }}>Writing</Button>
+                    </StyledLink>
+                    <StyledLink to="writing" offset={-1 * appBarHeight} smooth={true} duration={500} style={{ color: 'inherit' }}>
+                        <Button color="inherit" sx={{ border: 'none', fontSize: '1.2em', '&:hover, &:focus': { textDecoration: 'underline solid 2px', outline: 'none' } }}>Writing</Button>
+                    </StyledLink>
                 </Toolbar>
             </AppBar>
             <Fade in={true} timeout={2000}>
@@ -52,7 +65,7 @@ const Home: React.FC = () => {
                         width: '50%',
                         textAlign: 'center',
                         borderRadius: '8px',
-                        fontSize: '5em',
+                        fontSize: '6em',
                         //fontWeight: 'bold', 
                         textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
                     }}>
@@ -60,15 +73,39 @@ const Home: React.FC = () => {
                     </Box>
 
                 </Box></Fade>
-            <div id="gallery">
+
+            <Box id="gallery" sx={{
+                minHeight: minPageHeight,
+                position: 'relative',
+                '&::before': {
+                    content: '""',
+                    display: 'block',
+                    height: appBarHeight + 'px',
+                    marginTop: -(appBarHeight) + 'px',
+                    visibility: 'hidden',
+                }
+            }}>
                 <Gallery />
-            </div>
+            </Box>
+            <Box id="writing" sx={{
+                minHeight: minPageHeight,
+                position: 'relative',
+                '&::before': {
+                    content: '""',
+                    display: 'block',
+                    height: appBarHeight + 'px',
+                    marginTop: -(appBarHeight) + 'px',
+                    visibility: 'hidden',
+                }
+            }}>
+                <Writing />
+            </Box>
             <Box component="footer" sx={{ p: 3, backgroundColor: '#f5f5f5' }}>
                 <Typography variant="body1" align="center">
-                    Footer
+
                 </Typography>
             </Box>
-        </div>
+        </Box>
     );
 }
 
