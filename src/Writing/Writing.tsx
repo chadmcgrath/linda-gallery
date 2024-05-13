@@ -3,9 +3,10 @@ import { Box, List, ListItem, ListItemText, Typography } from "@mui/material";
 
 
 const documents = [
-  { id: 1, title: `Happy Mother's Day, Linda!`, content: `Mother's Day is a holiday that is celebrated on the second Sunday of May every year. It started in the United States. The holiday was founded in 1908 by Anna Jarvis. Mother's Day was first made to celebrate a person's own mother. Now it is made to celebrate all mothers and motherhood in general. It is celebrated at different times in different countries. In the United States of America, it is the second Sunday in May. Children can make cards and a lot of other things for their mother.` },
-  { id: 2, title: 'Document 2', content: 'Content of Document 2' },
-  // Add more documents as needed
+  { id: 1, title: `Happy Mother's Day, Peggy!`, content: `Mother's Day is a holiday that is celebrated on the second Sunday of May every year. It started in the United States. The holiday was founded in 1908 by Anna Jarvis. Mother's Day was first made to celebrate a person's own mother. Now it is made to celebrate all mothers and motherhood in general. It is celebrated at different times in different countries. In the United States of America, it is the second Sunday in May. Children can make cards and a lot of other things for their mother.` },
+  { id: 2, title: `CHad's late and someone stole his sammy`, content: `i missed my train by seconds cuz i got a sanwich then i left my sammy when i ordered mcd's coffee and somone runnoft wit it`},
+  { id: 2, title: 'Doc3', content: 'Doc 3' },
+  // Add more documents as neededrun build
 ];
 type DocumentType = {
   id: number;

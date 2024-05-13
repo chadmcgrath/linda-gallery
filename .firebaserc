@@ -1,5 +1,10 @@
 {
   "projects": {
-    "default": "linda-gallery"
-  }
+    "default": "linda-gallery",
+    "peggy": "peggy-cd0ca",
+    "linda": "linda-gallery"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }
