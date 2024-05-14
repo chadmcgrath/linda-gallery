@@ -16,6 +16,7 @@ const StyledLink = styled(Link)({
     color: 'white',
     '&:hover': {
         textDecoration: 'underline',
+        color: 'white',
     },
     '&:visited, &:link, &:active': { // Add these lines to set the color for all states of the link
         color: 'white',
