@@ -10,7 +10,7 @@ import Gallery from '../Gallery/Gallery';
 import { Link } from 'react-scroll';
 import Writing from '../Writing/Writing';
 import { styled } from '@mui/system';
-
+import { Owner } from '../types'; 
 
 const StyledLink = styled(Link)({
     color: 'inherit',
@@ -20,11 +20,18 @@ const StyledLink = styled(Link)({
     },
 });
 
+//todo: from firebase
+const owner:Owner ={
+    id : "linda-bullock",
+    docs:["assets/Documents/Psych/psychNurse.xml"],
+    images:["assets/Images/psychNurse/surfacing.png"],
+    name : "Linda BUllock",
+}
 const Home: React.FC = () => {
     const appBarHeight = 64;
     const minPageHeight = `calc(100vh - ${appBarHeight}px)`;
     // todo!!!!
-    const ownerName = "Chad";
+    const ownerName = owner.name;
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', scrollbarGutter: 'always' }}>
             <AppBar position="sticky" color="inherit" sx={{ backgroundColor: '#2B2C2C' }}>
@@ -88,19 +95,7 @@ const Home: React.FC = () => {
             }}>
                 <Gallery />
             </Box>
-            <Box id="writing" sx={{
-                minHeight: minPageHeight,
-                position: 'relative',
-                '&::before': {
-                    content: '""',
-                    display: 'block',
-                    height: appBarHeight + 'px',
-                    marginTop: -(appBarHeight) + 'px',
-                    visibility: 'hidden',
-                }
-            }}>
-                <Writing />
-            </Box>
+            <Writing {...owner} />
             <Box component="footer" sx={{ p: 3, backgroundColor: '#f5f5f5' }}>
                 <Typography variant="body1" align="center">
 
